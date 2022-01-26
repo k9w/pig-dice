@@ -8,7 +8,7 @@
  * Mikah Mathews
  * Kevin Williams
 
-#### _Pig Dice_
+# _Pig Dice_
 
 ## Technologies Used
 
@@ -25,10 +25,9 @@ from [the curriculum](https://learnhowtoprogram.com) for this project was origin
 
  * https://github.com/lavinbrenna
  * https://github.com/wjwat
- * https://github.com/plymatea
+ * https://github.com/Plymatea
  * https://github.com/mikah-mathews
  * https://github.com/k9w
- * https://github.com/Plymatea
 
 
 ## Setup/Installation Requirements
@@ -49,4 +48,4 @@ _For any problems, please file an issue on Github. Pull Requests welcome._
 
 [ISC](https://choosealicense.com/licenses/isc)
 
-Copyright (c) _2022_ _Mikah Mathews_ and _Kevin Williams_ and _Brenna Lavin_ and _William Watkins_
+Copyright (c) _2022_ _Brenna Lavin_, _William Watkins_, _Andy Plymate_, _Mikah Mathews_ and _Kevin Williams_
