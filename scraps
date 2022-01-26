@@ -1,0 +1,45 @@
+/* 
+
+
+Game start method
+
+ set current round to 0, create two player objects with scores of 0 create dice object
+
+Player Constructor
+
+totalScore
+roundScore
+
+
+roll method
+ increment player's round score until  they roll a 1
+ let val = newDice.roll()
+ if (val === 1) {
+    roundScore = 0;
+    *pass turn*
+} else (){
+  roundScore += val;
+}
+
+
+//hold method
+set event handler to hold button which allows player to roll dice and start accumulating round score.
+adds round score to player's total score 
+
+*/
+
+// Game.prototype.playRound = function() {
+//   // check current player
+//   if (this.currentRound % 2 === 0) {
+//     // plyayer2
+//     currentPlayer = 1;
+//   } else {
+//     // player1
+//     currentPlayer = 0;
+//   }
+
+//   // 5
+//   this.players[currentPlayer].totalScore
+
+//   this.currentRound += 1;
+// }
