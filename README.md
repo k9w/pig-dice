@@ -30,6 +30,12 @@ from [the curriculum](https://learnhowtoprogram.com) for this project was origin
  * https://github.com/k9w
 
 
+## Tests
+
+
+
+
+
 ## Setup/Installation Requirements
 
 * _Visit the live site at https://k9w.github.io/pig-dice_
