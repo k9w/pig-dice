@@ -1,23 +1,6 @@
-function Game(){
-  this.players ={};
-  this.currentRound = 1;
-}
 
-
-Game.prototype.winCheck = function(player1,player2){
-  if(player1.totalScore === 100){
-    return "Player 1 wins!";
-  }else if(player2.totalScore === 100){
-    return "Player 2 wins!";
-  }else{
-    currentRound += 1;
-  }
-}
 
 /* 
-
-
-
 
 
 Game start method
@@ -65,20 +48,48 @@ Dice.prototype.roll = function() {
     return Math.floor(Math.random() * max + min);
 };
 
-let newDice = new Dice();
-
-for (let i = 0; i < 10; i++) {
-  console.log(newDice.roll());
+function Player() {
+  this.totalScore = 0;
+  this.roundScore = 0;
 }
 
-win logic (check player1, player2)
-if (player1score === 100) {
- return "Player 1 wins!"
-} Else if (player2score === 100) {
- return "Player 2 wins!"
-} else {
-  currentRound  + 1;
+// let player1 = new Player();
+// let player2 = new Player();
+
+// Only 2 players for our games right now.
+function Game(player1, player2) {
+  this.players = [player1, player2];
+  this.currentRound = 1;
+}
+
+Game.prototype.winCheck = function(player1,player2) {
+  if(player1.totalScore === 100) {
+    return "Player 1 wins!";
+  } else if(player2.totalScore === 100) {
+    return "Player 2 wins!";
+  } else {
+    currentRound += 1;
+  }
+}
+
+Game.prototype.playRound = function() {
+  // check current player
+  if (this.currentRound % 2 === 0) {
+    // plyaer2
+    currentPlayer = 1;
+  } else {
+    // player1
+    currentPlayer = 0;
+  }
+
+  // 5
+  this.players[currentPlayer].totalScore
+
+  this.currentRound += 1;
 }
 
 
 
+Game.prototype.currentPlayer = function(currentRoll){
+  
+}
