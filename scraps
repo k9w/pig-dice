@@ -43,3 +43,15 @@ adds round score to player's total score
 
 //   this.currentRound += 1;
 // }
+
+
+/// refactor resetGame method so that it is not the same as the game constructor method
+
+/* ex: Game.prototype.resetGame = function(){
+   let player1.totalScore = 0;
+   let player1.turnScore = 0;
+   let player2.totalScore = 0;
+   let player2.turnScore = 0;
+   let currentPlayer = 0;
+}
+*/

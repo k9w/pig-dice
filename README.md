@@ -21,7 +21,7 @@ _Welcome to our first project as a dev team with Intermediate JavaScript assigne
 
 [The
 lesson](https://www.learnhowtoprogram.com/intermediate-javascript/object-oriented-javascript/game-of-choice-two-day-project)
-from [the curriculum](https://learnhowtoprogram.com) for this project was originally assigned for pair programming during class time on Monday January 26th 2022. Check out more of our work at:
+from [the curriculum](https://learnhowtoprogram.com) for this project was originally assigned for pair programming during class time on Wednesday January 26th 2022. Check out more of our work at:
 
  * https://github.com/lavinbrenna
  * https://github.com/wjwat
@@ -32,8 +32,12 @@ from [the curriculum](https://learnhowtoprogram.com) for this project was origin
 
 ## Tests
 
+The tests below are for new code or newly-refactored code starting Thursday the 27th.
 
-
+Describe: Reset Game
+Test:
+Code:
+Expected Result:
 
 
 ## Setup/Installation Requirements

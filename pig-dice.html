@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/scripts.js"></script>
+  <base target="_blank">
+  <title>Your Pig Dice Game</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md" id="playerOne"> <!-- player 1 info -->
+        <h1>Player One</h1>
+        <div class="totalScore">
+          <h4>Total Score:</h4>
+        </div>
+        <div class="turnScore">
+          <h4>Current Turn Score:</h4>
+        </div>
+      </div>
+      <div class="col-md" id="playerTwo"> <!-- player 2 info -->
+        <h1>Player Two</h1>
+        <div class="totalScore">
+          <h4>Total Score:</h4>
+        </div>
+        <div class="turnScore">
+          <h4>Current Turn Score:</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h1>Output</h1>
+      <div class="col-md">
+        <button class="button" id="roll">ROLL</button>
+      </div>
+      <div class="col-md">
+        <button class="button" id="hold">HOLD</button>
+      </div>
+    </div>
+    <button class="button" id="review">REVIEW RULES</button>
+    <button class="button" id="newGame">NEW GAME</button>
+    <div id="rules">
+      <br>
+      <h3>How to Play</h3>
+      <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":<br><br>
+
+        If the player rolls a 1, they score nothing and it becomes the next player's turn.
+        If the player rolls any other number, it is added to their turn total and the player's turn continues.
+        If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.<br><br>
+
+        The first player to score 100 or more points wins.<br><br>
+
+        For example, the first player, Donald, begins a turn with a roll of 5. Donald could hold and score 5 points, but chooses to roll again. Donald rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Donald rolls a 1, and must end his turn without scoring. The next player, Alexis, rolls the sequence 4-5-3-5-5, after which she chooses to hold, and adds her turn total of 22 points to her score. </p>
+    </div>
+  </div>
+</body>
+</html>

@@ -7,6 +7,7 @@ function Game() {
   this.currentPlayer = 0;
 }
 
+// this.players.forEach
 Game.prototype.resetGame = function() {
   let player1 = new Player();
   let player2 = new Player();
@@ -64,5 +65,22 @@ Player.prototype.roll = function() {
 
 // User Interface Logic
 
+function attachContactListeners() {
+  $(/*"#startButton"*/).on("click", function() {
+    let newGame = new Game()
+  });
+  $(/*"ROOOOOLLLLL"*/).on("click", function() {
+    newGame.playRound()
+  });
+  $(/*"HODER"*/).on("click", function() {
+    newGame.endRound();
+  });
+  $(/*"RESET"*/).on("click", function() {
+    newGame.resetRound();
+  });
+};
 
+$(document).ready(function() {
+  attachContactListeners();
 
+});
