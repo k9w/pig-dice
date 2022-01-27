@@ -36,6 +36,7 @@ Game.prototype.endRound = function() {
     playerCheck = 0;
   }
 
+  this.currentRoll = 0;
   this.players[this.currentPlayer].totalScore += this.players[this.currentPlayer].turnScore;
   this.players[this.currentPlayer].turnScore = 0;
   this.currentPlayer = playerCheck;
