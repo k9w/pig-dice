@@ -5,6 +5,7 @@ function Game() {
   let player2 = new Player();
   this.players = [player1, player2];
   this.currentPlayer = 0;
+  this.currentRoll = 0;
 }
 
 // this.players.forEach
@@ -13,17 +14,18 @@ Game.prototype.resetGame = function() {
   let player2 = new Player();
   this.players = [player1, player2];
   this.currentPlayer = 0;
+  this.currentRoll = 0;
 }
 
 Game.prototype.playRound = function() {
-  let newRoll = this.players[this.currentPlayer].roll();
-  console.log(newRoll);
+  this.currentRoll = this.players[this.currentPlayer].roll();
+  console.log(this.currentRoll);
 
-  if (newRoll === 1) {
+  if (this.currentRoll === 1) {
     this.players[this.currentPlayer].turnScore = 0;
     this.endRound();
   } else {
-    this.players[this.currentPlayer].turnScore += newRoll;
+    this.players[this.currentPlayer].turnScore += this.currentRoll;
   }
 }
 
@@ -37,7 +39,7 @@ Game.prototype.endRound = function() {
   this.players[this.currentPlayer].totalScore += this.players[this.currentPlayer].turnScore;
   this.players[this.currentPlayer].turnScore = 0;
   this.currentPlayer = playerCheck;
-}
+};
 
 Game.prototype.isCurrentPlayerWinner = function() {
   if (this.players[this.currentPlayer].totalScore + this.players[this.currentPlayer].turnScore >= 100) {
@@ -45,13 +47,13 @@ Game.prototype.isCurrentPlayerWinner = function() {
     return true;
   } else {
     return false;
-  }
-}
+  };
+};
 
 function Player() {
   this.totalScore = 0;
   this.turnScore = 0;
-}
+};
 
 // Roll our Dice
 Player.prototype.roll = function() {
@@ -60,27 +62,39 @@ Player.prototype.roll = function() {
   let max = 6;
 
   return Math.floor(Math.random() * max + min);
-}
+};
 
 
 // User Interface Logic
 
+let newGame = new Game();
+
+function updateDisplay() {
+  console.log(newGame);
+  $("#diceOutput").html(newGame.currentRoll);
+  $("#playerOneTotalScore").html(newGame.players[0].totalScore);
+  $("#playerOneTurnScore").html(newGame.players[0].totalScore);
+  $("#playerTwoTotalScore").html(newGame.players[1].turnScore);
+  $("#playerTwoTurnScore").html(newGame.players[1].turnScore);
+};
+
 function attachContactListeners() {
-  $(/*"#startButton"*/).on("click", function() {
-    let newGame = new Game()
+  $("#roll").on("click", function() {
+    newGame.playRound(); //defined on line 20`
+    updateDisplay();
   });
-  $(/*"ROOOOOLLLLL"*/).on("click", function() {
-    newGame.playRound()
-  });
-  $(/*"HODER"*/).on("click", function() {
+  $("#hold").on("click", function() {
     newGame.endRound();
+    updateDisplay();
   });
-  $(/*"RESET"*/).on("click", function() {
+  $("#resetGame").on("click", function() {
     newGame.resetRound();
+    updateDisplay();
   });
 };
 
 $(document).ready(function() {
   attachContactListeners();
-
 });
+
+//current winner not getting called, figure out total score

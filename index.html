@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,23 +11,62 @@
   <script src="js/scripts.js"></script>
   <title></title>
 </head>
+
 <body>
   <h1>Pig Dice</h1>
   <div class="container">
-    <br>
-    <h3>How to Play</h3>
-    <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":<br><br>
-
-      If the player rolls a 1, they score nothing and it becomes the next player's turn.
-      If the player rolls any other number, it is added to their turn total and the player's turn continues.
-      If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.<br><br>
-
-      The first player to score 100 or more points wins.<br><br>
-
-      For example, the first player, Donald, begins a turn with a roll of 5. Donald could hold and score 5 points, but chooses to roll again. Donald rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again. Donald rolls a 1, and must end his turn without scoring. The next player, Alexis, rolls the sequence 4-5-3-5-5, after which she chooses to hold, and adds her turn total of 22 points to her score. </p>
-    <form action="pig-dice.html" target="_blank">
-      <button>Go to the game!</button>
-    </form>
+    <div class="game">
+      <div class="row">
+        <div class="col-md" id="playerOne">
+          <!-- player 1 info -->
+          <h1>Player One</h1>
+          <div class="totalScore">
+            <h4>Total Score: <span id="playerOneTotalScore">0</span></h4>
+          </div>
+          <div class="turnScore">
+            <h4>Current Turn Score: <span id="playerOneTurnScore">0</span></h4>
+          </div>
+        </div>
+        <div class="col-md" id="playerTwo">
+          <!-- player 2 info -->
+          <h1>Player Two</h1>
+          <div class="totalScore">
+            <h4>Total Score: <span id="playerTwoTotalScore">0</span></h4>
+          </div>
+          <div class="turnScore">
+            <h4>Current Turn Score: <span id="playerTwoTurnScore">0</span></h4>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <h1>Output</h1>
+        <p id="diceOutput"><p>
+        <div class="col-md">
+          <button class="button mb-1" id="roll">ROLL</button>
+          <button class="button mb-1" id="hold">HOLD</button>
+        </div>
+      </div>
+      <button class="button mt-1" id="review">REVIEW RULES</button>
+      <button class="button m-1" id="resetGame">NEW GAME</button>
+      <br>
+      <div class="gameInstructions">
+        <h3>How to Play</h3>
+        <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":<br><br>
+  
+          If the player rolls a 1, they score nothing and it becomes the next player's turn.
+          If the player rolls any other number, it is added to their turn total and the player's turn continues.
+          If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's
+          turn.<br><br>
+  
+          The first player to score 100 or more points wins.<br><br>
+  
+          For example, the first player, Donald, begins a turn with a roll of 5. Donald could hold and score 5 points, but
+          chooses to roll again. Donald rolls a 2, and could hold with a turn total of 7 points, but chooses to roll again.
+          Donald rolls a 1, and must end his turn without scoring. The next player, Alexis, rolls the sequence 4-5-3-5-5,
+          after which she chooses to hold, and adds her turn total of 22 points to her score. </p>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>
