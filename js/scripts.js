@@ -1,5 +1,4 @@
 // Business Logic
-
 function Game() {
   let player1 = new Player();
   let player2 = new Player();
@@ -27,6 +26,8 @@ Game.prototype.playRound = function() {
   } else {
     this.players[this.currentPlayer].turnScore += this.currentRoll;
   }
+
+  return this.isCurrentPlayerWinner();
 }
 
 Game.prototype.endRound = function() {
@@ -65,23 +66,32 @@ Player.prototype.roll = function() {
   return Math.floor(Math.random() * max + min);
 };
 
-
 // User Interface Logic
-
 let newGame = new Game();
+
+function winnerScreen() {
+  let declareWinner = 'Player ' + (newGame.currentPlayer+1) + ' is the Winner!';
+  alert(declareWinner);
+}
 
 function updateDisplay() {
   console.log(newGame);
-  $("#diceOutput").html(newGame.currentRoll);
+  $("#diceOutput").html('<h3>Current Roll: ' + newGame.currentRoll + '</h3>');
   $("#playerOneTotalScore").html(newGame.players[0].totalScore);
-  $("#playerOneTurnScore").html(newGame.players[0].totalScore);
-  $("#playerTwoTotalScore").html(newGame.players[1].turnScore);
+  $("#playerOneTurnScore").html(newGame.players[0].turnScore);
+  $("#playerTwoTotalScore").html(newGame.players[1].totalScore);
   $("#playerTwoTurnScore").html(newGame.players[1].turnScore);
 };
 
 function attachContactListeners() {
   $("#roll").on("click", function() {
-    newGame.playRound(); //defined on line 20`
+    // Winner check!
+    if (newGame.playRound()) {
+      newGame.endRound();
+      updateDisplay();
+      winnerScreen();
+      newGame.resetGame();
+    }
     updateDisplay();
   });
   $("#hold").on("click", function() {
@@ -89,8 +99,11 @@ function attachContactListeners() {
     updateDisplay();
   });
   $("#resetGame").on("click", function() {
-    newGame.resetRound();
+    newGame.resetGame();
     updateDisplay();
+  });
+  $("#review").on("click", function() {
+    $(".gameInstructions").toggle();
   });
 };
 
@@ -98,4 +111,3 @@ $(document).ready(function() {
   attachContactListeners();
 });
 
-//current winner not getting called, figure out total score
