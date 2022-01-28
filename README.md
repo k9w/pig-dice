@@ -32,7 +32,7 @@ from [the curriculum](https://learnhowtoprogram.com) for this project was origin
 
 ## Tests
 
-The tests below are for new code or newly-refactored code starting Thursday the 27th.
+The tests below are for new code and newly-refactored code starting Thursday the 27th.
 
 Describe: Reset Game
 Test:
